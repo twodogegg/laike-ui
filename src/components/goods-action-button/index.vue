@@ -1,11 +1,16 @@
 <template>
-  <div class="index" :style="{background: color }" @click="$emit('click')">
+  <view class="index" :style="{background: color }" @click="$emit('click')">
     <p :style="{color: textColor}">{{text}}</p>
-  </div>
+  </view>
 </template>
 
 <script>
   export default {
+    data () {
+      return {
+        externalClasses: ['my-class']
+      }
+    },
     props: {
       color: {
         // 这里本来应该传入代码的。没有使用 iconfont 传入图片得了
@@ -25,8 +30,10 @@
 
 <style scoped lang="less">
   .index {
+    width: 100%;
     display: flex;
-    flex: 1;
+    height: 98rpx;
+    flex: 1 1 100%;
     justify-content: center;
     align-items: center;
     font-size: 30rpx;

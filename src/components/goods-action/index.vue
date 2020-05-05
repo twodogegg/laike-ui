@@ -3,7 +3,6 @@
     <div class="action">
       <slot></slot>
     </div>
-
   </div>
 </template>
 
@@ -20,16 +19,17 @@
   }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
   .goods-action {
     .action {
       background: white;
-      border-top: 1px solid #eee;
+      border-top: 1rpx solid #eee;
       position: fixed;
       bottom: 0;
       display: flex;
-      height: 98rpx;
+      // height: 98rpx;
       width: 100%;
+      flex: 1 1 100%;
     }
   }
 </style>

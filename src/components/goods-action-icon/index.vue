@@ -1,8 +1,17 @@
 <template>
-  <div class="goods-action-icon"  @click="$emit('click')">
-    <img :src="icon" modl="aspectFit" alt="">
+  <button
+    class="goods-action-icon"
+    @click="onClick"
+    :open-type="openType"
+    :session-from="sessionFrom"
+    :send-message-title="sendMessageTitle"
+    :send-message-path="showMessagePath"
+    :send-message-img="showMessageImg"
+    :show-message-card="showMessageCard"
+  >
+    <img :src="icon" model="aspectFit" alt="">
     <p>{{text}}</p>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -14,6 +23,32 @@
       },
       text: {
         type: String
+      },
+      openType: {
+        default: ''
+      },
+      sessionFrom: {
+        default: ''
+      },
+      sendMessageTitle: {
+        default: ''
+      },
+      showMessagePath: {
+        type: String,
+        default: ''
+      },
+      showMessageImg: {
+        type: String,
+        default: ''
+      },
+      showMessageCard: {
+        type: Boolean,
+        default: false
+      }
+    },
+    methods: {
+      onClick () {
+        this.$emit('click')
       }
     }
   }
@@ -32,12 +67,14 @@
     img {
       width: 36rpx;
       height: 36rpx;
+      box-sizing: border-box;
       margin-bottom: 8rpx;
     }
     p {
       display: block;
       color: #1D2941FF;
       font-size:22rpx;
+      line-height: 30rpx;
     }
   }
 </style>
