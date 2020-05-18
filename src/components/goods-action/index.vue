@@ -27,7 +27,7 @@
       position: fixed;
       bottom: 0;
       display: flex;
-      // height: 98rpx;
+      height: 98rpx;
       width: 100%;
       flex: 1 1 100%;
     }
